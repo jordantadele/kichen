@@ -245,6 +245,7 @@
       measurementId: "G-9YXB316Q1W"
     };
     firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
     function submitOrder() {
       const db = firebase.database();
       const newOrderRef = db.ref('orders').push();
