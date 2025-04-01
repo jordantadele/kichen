@@ -235,17 +235,27 @@
         loadOrders();
       }
     }
-    const firebaseConfig = {
-      apiKey: "AIzaSyBuLESCBd2LAB0pcf3R0W5lI4ZYF8YgUmk",
-      authDomain: "danosdigital.firebaseapp.com",
-      projectId: "danosdigital",
-      storageBucket: "danosdigital.firebasestorage.app",
-      messagingSenderId: "119140316777",
-      appId: "1:119140316777:web:d03ea0ffdb26e106a7d4f8",
-      measurementId: "G-9YXB316Q1W"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBuLESCBd2LAB0pcf3R0W5lI4ZYF8YgUmk",
+  authDomain: "danosdigital.firebaseapp.com",
+  projectId: "danosdigital",
+  storageBucket: "danosdigital.firebasestorage.app",
+  messagingSenderId: "119140316777",
+  appId: "1:119140316777:web:1e58111fe6aa2d64a7d4f8",
+  measurementId: "G-TTFNWTE5Q8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
     function submitOrder() {
       const db = firebase.database();
       const newOrderRef = db.ref('orders').push();
